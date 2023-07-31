@@ -16,7 +16,7 @@ export const Product = styled('a', {
   cursor: "pointer" ,
   position: "relative",
   overflow: "hidden",
-
+  color: "$white",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
