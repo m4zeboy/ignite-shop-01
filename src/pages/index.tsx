@@ -32,15 +32,13 @@ export default function Home({ products }: HomeProps) {
       {
         products.map(product => {
           return (
-            <Link href={`/product/${product.id}`} prefetch={false}>
-              <Product className="keen-slider__slide" key={product.id} id={product.id} >
+              <Product className="keen-slider__slide" key={product.id} id={product.id} href={`/product/${product.id}`}>
                 <Image src={product.imageUrl} alt="" width={520} height={480} />
                 <footer>
                   <strong>{product.name}</strong>
                   <span>{product.price}</span>
                 </footer>
               </Product>
-            </Link>
 
           )
         })
@@ -66,7 +64,6 @@ export const getStaticProps: GetStaticProps = async () => {
         style: "currency",
         currency: "BRL"
       }).format(price.unit_amount! / 100),
-
     }
   })
 
